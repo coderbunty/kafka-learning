@@ -1,0 +1,175 @@
+[
+  {
+    "type": "record",
+    "namespace": "com.learning.schema.avro",
+    "name": "Properties",
+    "version": "1",
+    "fields": [
+      {
+        "name": "entityId",
+        "type": "long",
+        "doc": "ID of widget / banner entity"
+      },
+      {
+        "name": "groupId",
+        "type": [
+          "null",
+          "long"
+        ],
+        "default": null,
+        "doc": "ID of widget group"
+      },
+      {
+        "name": "groupPosition",
+        "type": [
+          "null",
+          "int"
+        ],
+        "default": null,
+        "doc": "Position of entity group on the source screen"
+      },
+      {
+        "name": "groupTitle",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "Title of group"
+      },
+      {
+        "name": "position",
+        "type": [
+          "null",
+          "int"
+        ],
+        "default": null,
+        "doc": "Position of an entity in a group"
+      },
+      {
+        "name": "entityType",
+        "type": "string",
+        "doc": "Type of entity, either banner or widget"
+      },
+      {
+        "name": "screen",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "Destination screen name where the user will land upon ad click"
+      },
+      {
+        "name": "screenId",
+        "type": [
+          "null",
+          "int"
+        ],
+        "default": null,
+        "doc": "ID of destination screen"
+      },
+      {
+        "name": "origin",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "Source screen name from where the user navigated to the present screen"
+      },
+      {
+        "name": "sourceScreen",
+        "type": "string",
+        "doc": "Present screen where the user is seeing the ad"
+      },
+      {
+        "name": "originMetadata",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "Metadata about the source screen"
+      },
+      {
+        "name": "primaryRealEstate",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "Part of the present screen where the ad is being shown"
+      },
+      {
+        "name": "productIds",
+        "type": {
+          "type": "array",
+          "items": "string"
+        },
+        "default": [],
+        "doc": "Product ID list from the destination screen"
+      },
+      {
+        "name": "catalogIds",
+        "type": {
+          "type": "array",
+          "items": "string"
+        },
+        "default": [],
+        "doc": "Catalog ID list from the destination screen"
+      },
+      {
+        "name": "appVersionCode",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "Application version code"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "namespace": "com.learning.schema.avro",
+    "name": "ViewEvent",
+    "version": "1",
+    "fields": [
+      {
+        "name": "eventId",
+        "type": "string",
+        "doc": "Unique view event ID"
+      },
+      {
+        "name": "eventName",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "Name of the view event"
+      },
+      {
+        "name": "eventTimestamp",
+        "type": "long",
+        "doc": "Timestamp at which the event occurred"
+      },
+      {
+        "name": "userId",
+        "type": "string",
+        "doc": "Id of user who viewed the ad"
+      },
+      {
+        "name": "sessionId",
+        "type": "string",
+        "doc": "ID of user session"
+      },
+      {
+        "name": "properties",
+        "type": "com.learning.schema.avro.Properties",
+        "doc": "Properties associated with the view event"
+      }
+    ]
+  }
+]
