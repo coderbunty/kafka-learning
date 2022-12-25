@@ -143,10 +143,7 @@
       },
       {
         "name": "eventName",
-        "type": [
-          "null",
-          "string"
-        ],
+        "type": "string",
         "default": null,
         "doc": "Name of the view event"
       },
