@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 public class LocationCoordinateEventConsumer {
 
   @KafkaListener(
-      groupId = "demo-consumer-group",
-      topics = {"demo_topic"})
+      groupId = "location-consumer-group",
+      topics = {"location_topic"},
+      containerFactory = "locationListenerFactory")
   public void consumerEvent(@Payload ConsumerRecord<String, String> consumerRecord) {
     // Thread.sleep(5000);
     log.info("Received message: " + consumerRecord.value());

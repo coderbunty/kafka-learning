@@ -14,7 +14,7 @@ public class LocationCoordinateEventProducer {
 
   @Autowired private KafkaTemplate<String, String> kafkaTemplate;
 
-  private String topic = "demo_topic";
+  private String topic = "location_topic";
 
   public void publishEvent(String message) {
     ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, message);
